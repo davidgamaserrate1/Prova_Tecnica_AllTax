@@ -15,7 +15,7 @@ Para executar este projeto em seu ambiente local, siga os passos abaixo:
 3. Acesse o diretório do projeto:
 
    ```bash
-   cd dashboard-relatorio-vendas
+   cd Prova_Tecnica_AllTax
    ```
 
 4. Instale as dependências utilizando o npm:
