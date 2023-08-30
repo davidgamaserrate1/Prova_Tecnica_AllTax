@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Chart } from "react-google-charts";
 import data from "../../data";
-
+import './chart-styles.css'
 const options = {
   title: "Sales Report",
   curveType: "none",
@@ -38,7 +38,7 @@ function ChartComponent() {
     setSelectedBrand(event.target.value);
   };
 
-  console.log(selectedBrand)
+  
 
   const sales = data.salesData[selectedBrand];
   const month = ["Jan", "Fev", "Mar", "Abr", "Maio", "Jun", "Jul", "Ago", "Set", "Out", "Nov", "Dez"];
@@ -50,29 +50,34 @@ function ChartComponent() {
 
   return (
     <>
-     Categoria: <select name="categories" id="categories" onChange={handleCategoryChange} value={selectedCategory}>
-        {data.categories.map((category) => (
-          <option key={category} value={category}>
-            {category}
-          </option>
-        ))}
-      </select>
-      Produto:<select name="products" id="products" onChange={handleProductChange} value={selectedProduct}>
-        {data.products[selectedCategory].map((product) => (
-          <option key={product} value={product}>
-            {product}
-          </option>
-        ))}
-      </select>
-      Marca:<select name="brands" id="brands" onChange={handleBrandChange} value={selectedBrand}>
-        {data.brands[selectedProduct].map((brand) => (
-          <option key={brand} value={brand}>
-            {brand}
-          </option>
-        ))}
-      </select>
+     
+      Categoria: 
+        <select name="categories" id="categories" onChange={handleCategoryChange} value={selectedCategory}>
+          {data.categories.map((category) => (
+            <option key={category} value={category}>
+              {category}
+            </option>
+          ))}
+        </select>
+        Produto:
+        <select name="products" id="products" onChange={handleProductChange} value={selectedProduct}>
+          {data.products[selectedCategory].map((product) => (
+            <option key={product} value={product}>
+              {product}
+            </option>
+          ))}
+        </select>
+        Marca:
+        <select name="brands" id="brands" onChange={handleBrandChange} value={selectedBrand}>
+          {data.brands[selectedProduct].map((brand) => (
+            <option key={brand} value={brand}>
+              {brand}
+            </option>
+          ))}
+        </select>
+    
 
-      <Chart chartType="LineChart" width="100%" height="400px" data={chartData} options={options} />
+      <Chart chartType="LineChart" width="100%" height="800px" data={chartData} options={options} />
     </>
   );
 }

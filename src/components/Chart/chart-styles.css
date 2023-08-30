@@ -1,0 +1,12 @@
+.dropdown_list{
+    display: flex;
+    width: 100%;   
+    justify-content: center;
+    gap: 16px;
+    align-items: center;      
+    padding: 8px;
+    background-color: #5896E6;
+    color: #fff;
+}
+
+ 
