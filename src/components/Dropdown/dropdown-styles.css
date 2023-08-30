@@ -1,0 +1,11 @@
+.dropdown_list{
+    display: flex;
+    justify-content: center;
+    align-items: center;    
+    flex-direction: row;
+    flex-wrap: wrap;
+ }
+
+ .dropdown__name{
+    margin-right: 4px;
+ }
