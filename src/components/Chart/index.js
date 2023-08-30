@@ -50,21 +50,21 @@ function ChartComponent() {
 
   return (
     <>
-      <select name="categories" id="categories" onChange={handleCategoryChange} value={selectedCategory}>
+     Categoria: <select name="categories" id="categories" onChange={handleCategoryChange} value={selectedCategory}>
         {data.categories.map((category) => (
           <option key={category} value={category}>
             {category}
           </option>
         ))}
       </select>
-      <select name="products" id="products" onChange={handleProductChange} value={selectedProduct}>
+      Produto:<select name="products" id="products" onChange={handleProductChange} value={selectedProduct}>
         {data.products[selectedCategory].map((product) => (
           <option key={product} value={product}>
             {product}
           </option>
         ))}
       </select>
-      <select name="brands" id="brands" onChange={handleBrandChange} value={selectedBrand}>
+      Marca:<select name="brands" id="brands" onChange={handleBrandChange} value={selectedBrand}>
         {data.brands[selectedProduct].map((brand) => (
           <option key={brand} value={brand}>
             {brand}
