@@ -1,0 +1,26 @@
+
+.dropdown_slist{
+    align-items: center;
+    display: flex;
+    font-family: 'Saira', sans-serif;
+    font-size: 16px;
+    flex-wrap: wrap;
+    gap:16px    ;
+    justify-content: center;
+    margin-top: 127px ;
+    min-height: 64px;
+    position: relative; 
+    width: 100%; 
+}
+
+.download{
+    display: flex; 
+    justify-content: center;
+}
+.download__buton{
+    align-items: center;
+    display: flex; 
+    justify-content: center;
+    margin-left: 4px ;
+    right: 10px;
+}

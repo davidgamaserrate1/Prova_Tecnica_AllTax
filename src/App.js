@@ -1,14 +1,12 @@
 import React from "react";
-import ChartComponent from "./components/Chart";
+import ChartComponent from "./components/DashBoard";
 import Header from "./components/Header";
  
 const App =()=>{
 
   return (
     <>
-      <Header>
-        <h1>Sales Report</h1>
-      </Header>
+      <Header/>
       <ChartComponent/>
     </>
   );

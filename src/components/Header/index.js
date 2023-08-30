@@ -3,7 +3,7 @@ import './header-styles.css'
 const Header = ({ children })=>{
    return(
     <div className="header">
-        {children}
+       <h1>Sales Report</h1>
     </div>
    )
 }
