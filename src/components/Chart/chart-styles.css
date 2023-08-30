@@ -1,12 +1,19 @@
 .dropdown_list{
     display: flex;
-    width: 100%;   
+     
+    width: 100%;
+    align-items: center;
     justify-content: center;
-    gap: 16px;
-    align-items: center;      
-    padding: 8px;
-    background-color: #5896E6;
-    color: #fff;
+    gap:16px    ;
+    margin-top: 127px ;
+    min-height: 64px;
+    position: relative; 
+     
+    font-size: 16px;
+    font-family: 'Saira', sans-serif;
+    flex-wrap: wrap;
 }
 
- 
+.dropdown_list__name{
+     
+}

@@ -3,17 +3,26 @@ import { Chart } from "react-google-charts";
 import data from "../../data";
 import './chart-styles.css'
 const options = {
-  title: "Sales Report",
+  title: "Sales By Month by:",
+ 
   curveType: "none",
   legend: { position: "bottom" },
   hAxis: {
-    title: "Meses", 
+    title: "Meses",     
   },
   vAxis: {
-    title: "Vendas", 
+    title: "Vendas",
   },
 
+ 
+  pointSize: 5, 
+  series: {
+    0: { pointShape: "circle", pointSize: 8, color: "#5896E6" },     
+  },
+  
 };
+
+
 
 function ChartComponent() {
   const [selectedCategory, setSelectedCategory] = useState(data.categories[0]);
@@ -41,8 +50,8 @@ function ChartComponent() {
   
 
   const sales = data.salesData[selectedBrand];
-  const month = ["Jan", "Fev", "Mar", "Abr", "Maio", "Jun", "Jul", "Ago", "Set", "Out", "Nov", "Dez"];
-
+  const month = ["Janeiro", "Fevereiro", "Marça", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"];
+  console.log(sales)
   const chartData = [["Meses", "Vendas"]];
   for (let i = 0; i < sales.length; i++) {
     chartData.push([month[i], sales[i]]);
@@ -51,33 +60,39 @@ function ChartComponent() {
   return (
     <>
      
-      Categoria: 
-        <select name="categories" id="categories" onChange={handleCategoryChange} value={selectedCategory}>
-          {data.categories.map((category) => (
-            <option key={category} value={category}>
-              {category}
-            </option>
-          ))}
-        </select>
-        Produto:
-        <select name="products" id="products" onChange={handleProductChange} value={selectedProduct}>
-          {data.products[selectedCategory].map((product) => (
-            <option key={product} value={product}>
-              {product}
-            </option>
-          ))}
-        </select>
-        Marca:
-        <select name="brands" id="brands" onChange={handleBrandChange} value={selectedBrand}>
-          {data.brands[selectedProduct].map((brand) => (
-            <option key={brand} value={brand}>
-              {brand}
-            </option>
-          ))}
-        </select>
+      <div className="dropdown_list">
+        <span className="dropdown_list__name">Categoria:</span> 
+          <select name="categories" id="categories" onChange={handleCategoryChange} value={selectedCategory}>
+            {data.categories.map((category) => (
+              <option key={category} value={category}>
+                {category}
+              </option>
+            ))}
+          </select>
+          
+          <span className="dropdown_list__name">Produto:</span> 
+          <select name="products" id="products" onChange={handleProductChange} value={selectedProduct}>
+            {data.products[selectedCategory].map((product) => (
+              <option key={product} value={product}>
+                {product}
+              </option>
+            ))}
+          </select>
+
+          <span className="dropdown_list__name">Marca:</span>         
+          <select name="brands" id="brands" onChange={handleBrandChange} value={selectedBrand}>
+            {data.brands[selectedProduct].map((brand) => (
+              <option key={brand} value={brand}>
+                {brand}
+              </option>
+            ))}
+          </select>
+      </div>
     
 
-      <Chart chartType="LineChart" width="100%" height="800px" data={chartData} options={options} />
+       
+        <Chart className="chart" chartType="LineChart" width="100vw" height="600px" data={chartData} options={options} />
+       
     </>
   );
 }

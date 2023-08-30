@@ -7,7 +7,7 @@ const App =()=>{
   return (
     <>
       <Header>
-        <div>Sales Report</div>
+        <h1>Sales Report</h1>
       </Header>
       <ChartComponent/>
     </>
