@@ -45,7 +45,12 @@ O projeto utiliza as seguintes dependências:
 - [react-router-dom](https://reactrouter.com/en/main) 
 - [react-scripts](https://www.npmjs.com/package/react-scripts)
 
+## Deploy
+A aplicação também recebeu um deploy na plataforma Vercel. 
+ 
+ 
+ Você pode acessá-la usando o seguinte link:  https://dashboard-relatorio-vendas.vercel.app
 
-
+ 
 
  
