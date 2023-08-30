@@ -1,10 +1,14 @@
+import React from "react";
+import ChartComponent from "./components/Chart";
+ 
+const App =()=>{
 
-function App() {
   return (
-    <div className="App">
-       app
-    </div>
+    <>
+      <ChartComponent/>
+    </>
   );
 }
+ 
 
 export default App;
