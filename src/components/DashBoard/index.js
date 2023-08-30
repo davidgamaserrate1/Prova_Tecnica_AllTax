@@ -6,9 +6,6 @@ import Dropdown from "../Dropdown";
 import { PDFDownloadLink, Document, Page,  Image } from "@react-pdf/renderer";
 import html2canvas from "html2canvas";
  
-
-
-
 function DashBoard() {
   const [selectedCategory, setSelectedCategory] = useState(data.categories[0]);
   const [selectedProduct, setSelectedProduct] = useState(data.products[selectedCategory][0]);
